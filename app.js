@@ -20,22 +20,20 @@ let randomIndex = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-let randompunchline = punchlines[randomIndex(10)];
-
-
-//Afficher dans la boîte blanche
-let elRandomPunchline = document.getElementById("punchline");
-
-elRandomPunchline.textContent = randompunchline;
-
-
 function getRandomIndex() {
-    let newPunch = document.getElementById ("punchline")
-    newPunch.style.display = "block";
+    //Afficher phrase aléatoire
+    let randompunchline = punchlines[randomIndex(10)];
+    //Afficher dans la boîte blanche
+    let elRandomPunchline = document.getElementById("punchline");
+    elRandomPunchline.innerHTML = randompunchline;
 }
 
-let generatorbtn = document.getElementById("generatorbtn");
-generatorbtn.addEventListener("click", getRandomIndex)
+function ListenToCliks() {
+    const btn = document.getElementById("generatorbtn");
+    btn.addEventListener("click", getRandomIndex)
+}
+
+ListenToCliks();
 
 //3. a. La méthode simple: Un tableau de couleurs (en Hexadécimal). Tu pioches dedans aléatoirement aussi
 
@@ -51,3 +49,29 @@ let colors = [
     "#2874A6",
     "#28B463",
 ]
+
+let PickRandomColor = function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+//Afficher dans la boîte blanche
+function getRandomColor () {
+    //Afficher couleur aléatoire
+    let randomColor = colors[PickRandomColor(10)];
+    //changer background color
+    const changeBgcolor = document.getElementById("backgroundcolor");
+    changeBgcolor.style.backgroundColor = randomColor;
+    changeBgcolor.style.color = randomColor;
+    
+    const changeBgColorBtn = document.getElementById("generatorbtn");
+    changeBgColorBtn.style.backgroundColor = randomColor;
+}
+
+function ListenToCliksColor () {
+    
+    const colorbtn = document.getElementById("generatorbtn");
+    colorbtn.addEventListener('click', getRandomColor);
+}
+
+ListenToCliksColor();
+
