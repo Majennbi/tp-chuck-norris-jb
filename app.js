@@ -37,7 +37,7 @@ ListenToCliks();
 
 //3. a. La méthode simple: Un tableau de couleurs (en Hexadécimal). Tu pioches dedans aléatoirement aussi
 
-let colors = [
+/*let colors = [
     "#F08080",
     "#616A6B ",
     "#21618C",
@@ -50,14 +50,9 @@ let colors = [
     "#28B463",
 ]
 
-let PickRandomColor = function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-//Afficher dans la boîte blanche
 function getRandomColor () {
     //Afficher couleur aléatoire
-    let randomColor = colors[PickRandomColor(10)];
+    let randomColor = colors[randomIndex(10)];
     //changer background color
     const changeBgcolor = document.getElementById("backgroundcolor");
     changeBgcolor.style.backgroundColor = randomColor;
@@ -73,5 +68,31 @@ function ListenToCliksColor () {
     colorbtn.addEventListener('click', getRandomColor);
 }
 
-ListenToCliksColor();
+ListenToCliksColor();*/
 
+//3.b. Méthode compliqué
+     
+ function getRandomRGB () {
+    //i. Tu génères 3 nombres entre 0 et 255.
+    const R = randomIndex(256);
+    const G = randomIndex(256);
+    const B = randomIndex(256);
+    //ii. Ca sera tes couleurs R, G et B.
+    //iii. Tu l’exploites grâce à la propriété css `rgb(x,y,z)`
+    const randomRGB= `rgb(${R}, ${G}, ${B})`;
+    
+    const changeBgcolor = document.getElementById("backgroundcolor");
+    changeBgcolor.style.backgroundColor = randomRGB;
+    changeBgcolor.style.color = randomRGB;
+    
+    const changeBgColorBtn = document.getElementById("generatorbtn");
+    changeBgColorBtn.style.backgroundColor = randomRGB;
+}
+
+function ListenToCliksRGB () {
+    
+    const colorbtn = document.getElementById("generatorbtn");
+    colorbtn.addEventListener('click', getRandomRGB);
+}
+
+ListenToCliksRGB();
