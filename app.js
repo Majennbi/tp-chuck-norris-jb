@@ -47,8 +47,7 @@ ListenToCliks();
     "#B9770E",
     "#5B2C6F",
     "#2874A6",
-    "#28B463",
-]
+    "#28B463",]
 
 function getRandomColor () {
     //Afficher couleur aléatoire
