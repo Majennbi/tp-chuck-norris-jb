@@ -1,5 +1,3 @@
-
-
 html {
     height: 100%;
     display: flex;
@@ -15,7 +13,7 @@ body {
    
 }
 
-div {
+.punchlinebox {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -30,7 +28,6 @@ div {
     border-radius: 6px;;
     text-align: center;
 }
-
 
 button {
     background-color: #2874A6;

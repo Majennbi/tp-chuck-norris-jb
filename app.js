@@ -1,6 +1,6 @@
 //1.T’auras besoin d’un tableau JS avec une dizaine de punchlines
 
-let punchlines = [
+const punchlines = [
     "Un jour, Chuck Norris a plongé dans la Mer Rouge. Moïse en a profité pour passer.",
     "Chuck Norris ne ment jamais, c'est la vérité qui se trompe.",
     "Chuck Norris ne s'est jamais rendu à l'école. Chuck Norris ne se rend jamais.",
@@ -16,7 +16,7 @@ let punchlines = [
 //2. Au click du bouton, tu récupéreras aléatoirement une de ces phrases et tu l’afficheras dans la boite blanche
 
 //Récupérer aléatoirement punchline
-let randomIndex = function getRandomInt(max) {
+const randomIndex = function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
